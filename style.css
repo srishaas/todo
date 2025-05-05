@@ -1,0 +1,156 @@
+/* Full page background image */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: url('/static/images/background.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    color:white ;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.logout-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background-color: #ff4d4d;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #e60000;
+}
+
+
+/* Main container with glassmorphism */
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    color: #ffffff;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Fade-in animation for smooth entry */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+/* Logout link inside header */
+h1 a {
+    font-size: 0.9rem;
+    float: right;
+    color: #ff6666;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+h1 a:hover {
+    text-decoration: underline;
+}
+
+/* Form section */
+form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    outline: none;
+    font-size: 1rem;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #00cc99;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #00b386;
+}
+
+/* Task card styles */
+.task {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.task:hover {
+    transform: scale(1.02);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.task input[type="checkbox"] {
+    margin-right: 15px;
+    transform: scale(1.3);
+    cursor: pointer;
+}
+
+.task .text {
+    flex: 1;
+    font-size: 1rem;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+/* Completed tasks with strikethrough */
+.task.completed .text {
+    text-decoration: line-through;
+    color: #cccccc;
+}
+
+/* Delete icon/button */
+.task a {
+    margin-left: 15px;
+    color: #ff4d4d;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.task a:hover {
+    color: #ff1a1a;
+}

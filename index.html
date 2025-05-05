@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>To-Do List</title>
+    <style>
+        .edit-form {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <a href="/logout" class="logout-btn">Logout</a>
+    <div class="glass">
+        <h2>Welcome, {{ session['user'] }}!</h2>
+
+        <!-- Add Task Form -->
+        <form method="POST" action="/add">
+            <input type="text" name="task" placeholder="Add a task..." required>
+            <button type="submit">Add Task</button>
+        </form>
+
+        <!-- Tasks List -->
+        <ul class="tasks">
+            {% for task in tasks %}
+            <li class="{{ 'completed' if task.complete else '' }}">
+                <input type="checkbox" onclick="location.href='/complete/{{ task.id }}'" {% if task.complete %}checked{% endif %}>
+
+                <!-- Check if editing -->
+                {% if task.id == edit_id %}
+                    <form action="{{ url_for('update', task_id=task.id) }}" method="POST">
+                        <input type="text" name="task" value="{{ task.task }}">
+                        <button type="submit">Update</button>
+                    </form>
+                {% else %}
+                    {{ task.task }}
+                    <a href="/edit/{{ task.id }}">✏️ Edit</a>
+                {% endif %}
+
+                <a href="/delete/{{ task.id }}" style="color:red;float:right;">❌</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+body {
+    background-image: url('../images/pexels-timmossholder-3612932.jpg');
+    background-size: cover;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+
+.glass {
+    background: rgba(0, 128, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 128, 255, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    width: 350px;
+    color: white;
+    text-align: center;
+}
+
+input, button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+}
+
+input {
+    background: rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+a {
+    color: #a0cfff;
+}
